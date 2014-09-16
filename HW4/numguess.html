@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+	<style>
+	body {
+		background-color: #c3c3c3;
+	}
+	h1, h3, p, section{
+		color: #9933FF;
+		text-align: center;
+	}
+	</style>
+	</head>
+	<body>
+		<h1>Guess the Number!</h1>
+
+		<section id="gamespace">
+			<p id="output"> Guess the number! It is between 1 and 100</p>
+			<input type="text" id="input" size="12px">
+			<br>
+
+			<input type="button" value="Enter Guess" onClick="game();" id="enterButton">
+			<br><image src="Ohio_University_Logo.png" alt="Ohio University" style="width320px;height268px">
+			<!--<script src="jquery-1.11.1.js"></script>
+			<button id="Refresh">Restart Game</button>
+			<script>
+				$('Refresh').click(function(){
+					location.reload(true);
+				});
+			</script>-->
+			
+
+		</section>
+	
+		<script>
+
+		var ranNumber=Math.ceil(Math.random()*100)+1;
+		var guess;
+		var numguesses =0;
+		enterButton.disabled=false;
+
+		var playerinput = document.getElementById("input");
+		var output = document.getElementById("output")
+
+		function game()
+		{
+			numguesses = numguesses +=1;
+			guess = parseInt(input.value);
+
+			if(guess > ranNumber)
+			{
+				output.innerHTML = "The number is smaller than "+guess+". You have made "+numguesses+" guesses.";
+			}
+			else if(guess < ranNumber)
+			{
+				output.innerHTML = "The number is larger than "+guess+". You have made "+numguesses+" guesses.";
+			}
+			else if(guess === ranNumber)
+			{
+				output.innerHTML = "<h3>You guessed the number!<br>Refresh the page to play again!</h3>";
+			}
+		}
+		</script>
+		</body>
+
+</html>
