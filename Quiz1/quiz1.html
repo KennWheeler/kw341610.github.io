@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jquery-1.11.1.min.js"></script>
+
+		<script>
+
+		$(function(){
+		$("button").click(function(){
+
+		var text = $("#input").val();
+		text= text.toUpperCase();
+		$("#change").remove();
+		$("#move").text(text);
+			});
+		});
+		
+		</script>
+
+	</head>
+	<body>
+		<h1>Quiz 1</h1>
+<div id="change">This is text</div>
+<input id="input" type="text"></input>
+<button>To upper</button>
+</div>
+<div id="move">
+	</div>
+	</body>
+
+</html>
